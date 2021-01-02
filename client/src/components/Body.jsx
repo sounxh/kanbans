@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 import { makeStyles } from "@material-ui/styles";
 import { Box } from "@material-ui/core";
 import Column from "./Column";
-import AddColumnForm from './AddColumnForm'
+import AddColumnForm from "./AddColumnForm";
 
 const itemsFromBackend = [
   { id: uuid(), content: "First task" },
@@ -131,9 +131,9 @@ function App() {
               );
             })}
             {provided.placeholder}
-            <Box className={classes.box2} component='div'>
-            <AddColumnForm/>
-          </Box>
+            <Box className={classes.box2} component="div">
+              <AddColumnForm />
+            </Box>
           </Box>
         )}
       </Droppable>
