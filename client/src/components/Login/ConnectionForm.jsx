@@ -47,7 +47,6 @@ const CreatAccountForm = () => {
             variant="outlined"
           />
         </Grid>
-        </Grid>
         <Grid item xs={12}>
           <TextField
             id="password_accounte"
