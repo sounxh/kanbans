@@ -29,7 +29,7 @@ const CreateAccountForm = () => {
     setPassword(e.target.value);
   };
   const handleConfirmedPassword = (e) => {
-    setConfirmedPassWord(e.target.value);
+    setConfirmedPassword(e.target.value);
   };
   const handleName = (e) => {
     setName(e.target.value);
@@ -79,7 +79,7 @@ const CreateAccountForm = () => {
             type="password"
             required
             fullWidth
-            value={confirmedPassWord}
+            value={confirmedPassword}
             onChange={handleConfirmedPassword}
             variant="outlined"
           />
@@ -91,7 +91,7 @@ const CreateAccountForm = () => {
                 "creation submit with information",
                 mail,
                 password,
-                confirmedPassWord
+                confirmedPassword
               )
             }
             size="medium"
