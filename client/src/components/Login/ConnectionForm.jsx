@@ -43,7 +43,7 @@ const CreatAccountForm = () => {
         <Grid item xs={12}>
           <TextField
             id="mail_accounte"
-            label="Addresse mail"
+            label="Adresse mail"
             required
             fullWidth
             value={mail}
@@ -54,7 +54,7 @@ const CreatAccountForm = () => {
         <Grid item xs={12}>
           <TextField
             id="name_accounte"
-            label="Nome"
+            label="Nom"
             required
             fullWidth
             value={name}
