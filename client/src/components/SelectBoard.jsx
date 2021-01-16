@@ -13,7 +13,6 @@ const SelectBoard = () => {
   Object.entries(boardDataFromBackEnd).map(([id, value], index) =>
     console.log("coucou la value", value)
   );
-  // console.log("cocuou cest le entirjes", id, );
   return (
     <Grid container spacing={3}>
       {Object.entries(boardDataFromBackEnd).map(([id, value], index) => {

@@ -1,47 +1,98 @@
-import { Grid, Card, TextField } from "@material-ui/core";
+import { useState } from "react";
+import { makeStyles } from "@material-ui/styles";
+import {
+  Grid,
+  Card,
+  Box,
+  TextField,
+  Container,
+  Typography,
+  Button,
+} from "@material-ui/core";
 
+const useStyles = makeStyles((theme) => ({
+  appContainer: {
+    alignItems: "center",
+  },
+}));
+
+// TODO verifier que toute les information son rentré
+// TODO verifier que les deux mots de passe son les même
 const CreatAccountForm = () => {
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmedPassWord, setConfirmedPassWord] = useState("");
+
+  const classes = useStyles();
+
+  // TODO verifier le format
+  const handleMail = (e) => {
+    setMail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleConfirmedPassword = (e) => {
+    setConfirmedPassWord(e.target.value);
+  };
   return (
-    <Card>
-      <Grid container spacing={2} alignContent='center'>
+    <Container maxWidth="sm">
+      <Grid container spacing={2}>
+        <Typography variant="h4">Se connecter</Typography>
         <Grid item xs={12}>
           <TextField
-            id="create_accounte"
-            label="Saisisser votre adress mail"
-            // value={newCard}
-            // onChange={handleChange}
+            id="mail_accounte"
+            label="Addresse mail"
+            required
+            fullWidth
+            value={mail}
+            onChange={handleMail}
             variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="create_accounte"
-            label="Saisisser votre adress mail"
-            // value={newCard}
-            // onChange={handleChange}
+            id="password_accounte"
+            label="Mot de passe"
+            type="password"
+            required
+            fullWidth
+            value={password}
+            onChange={handlePassword}
             variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="create_accounte"
-            label="Saisisser votre adress mail"
-            // value={newCard}
-            // onChange={handleChange}
+            id="confirm_password_accounte"
+            label="Confirmer mot de passe"
+            type="password"
+            required
+            fullWidth
+            value={confirmedPassWord}
+            onChange={handleConfirmedPassword}
             variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            id="create_accounte"
-            label="Saisisser votre adress mail"
-            // value={newCard}
-            // onChange={handleChange}
-            variant="outlined"
-          />
+          <Button
+            onClick={(e) =>
+              console.log(
+                "connection submit with information",
+                mail,
+                password,
+                confirmedPassWord
+              )
+            }
+            size="medium"
+            variant="contained"
+            color="primary"
+          >
+            Se connecter
+          </Button>
         </Grid>
       </Grid>
-    </Card>
+    </Container>
   );
 };
 

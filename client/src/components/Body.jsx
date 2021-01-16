@@ -37,7 +37,6 @@ const columnsFromBackend = {
 const tabsFromBackend = { id: uuid(), columns: columnsFromBackend };
 
 const onDragEnd = (result, columns, setColumns) => {
-  console.log("🚀 ~ file: Body.jsx ~ line 36 ~ onDragEnd ~ result", result);
   if (!result.destination) return;
   const { source, destination, type } = result;
   if (type === "Card") {

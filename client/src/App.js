@@ -1,9 +1,7 @@
-import Header from "./components/Header";
-import Body from "./components/Body";
 import SelectBoard from "./components/SelectBoard";
 import Home from "./components/Home";
 import Login from './components/Login'
-import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -13,10 +11,9 @@ function App() {
       {/* <Header />
       <Body /> */}
       <Switch>
-        <Route path="/" exact component={SelectBoard} />
-        <Route path="/" exact component={SelectBoard} />
+        <Route path="/" exact component={Login} />
         <Route path="/Home" component={Home} />
-        <Route path="/Login" component={Login} />
+        <Route path="/SelectBoard" component={SelectBoard} />
       </Switch>
     </BrowserRouter>
   );

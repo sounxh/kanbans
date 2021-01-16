@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/styles";
-import { Box } from "@material-ui/core"
-import ConnectionForm from './ConnectionForm'
+import { Box, Container } from "@material-ui/core";
+import ConnectionForm from "./ConnectionForm";
+import CreatAccountForm from "./CreateAccountForm";
 
 const useStyles = makeStyles((theme) => ({
   appContainer: {
@@ -11,17 +12,21 @@ const useStyles = makeStyles((theme) => ({
     overflowY: "hidden",
     position: "absolute",
     marginTop: "100px",
-    padding: "10px"
+    padding: "10px",
   },
 }));
 
-const Body = () => {
+const Body = ({ isConnection } = true) => {
+  console.log(
+    "🚀 ~ file: Body.jsx ~ line 20 ~ Body ~ isConnection",
+    isConnection
+  );
   const classes = useStyles();
 
   return (
-    <Box className={classes.appContainer}>
-      <ConnectionForm/>
-    </Box>
+    <Container className={classes.appContainer} maxWidth="sm">
+      {isConnection ? <ConnectionForm /> : <CreatAccountForm />}
+    </Container>
   );
 };
 
