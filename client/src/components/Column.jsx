@@ -14,14 +14,16 @@ const useStyles = makeStyles((theme) => ({
 const Column = ({ columnId, column, index }) => {
   const classes = useStyles();
   return (
-    <Box className={classes.columnContainer} key={columnId}>
-      <Draggable index={index} draggableId={columnId}>
-        {(provided) => (
-          <Card
-            ref={provided.innerRef}
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-          >
+    <Draggable index={index} draggableId={columnId}>
+      {(provided) => (
+        <Box
+          className={classes.columnContainer}
+          key={columnId}
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <Card>
             <CardHeader title={column.name} />
             <Droppable droppableId={columnId} key={columnId} type="Card">
               {(provided, snapshot) => {
@@ -44,9 +46,9 @@ const Column = ({ columnId, column, index }) => {
               }}
             </Droppable>
           </Card>
-        )}
-      </Draggable>
-    </Box>
+        </Box>
+      )}
+    </Draggable>
   );
 };
 
