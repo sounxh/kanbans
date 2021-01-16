@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 const CreatAccountForm = () => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
 
   const classes = useStyles();
 
@@ -31,9 +30,6 @@ const CreatAccountForm = () => {
   };
   const handlePassword = (e) => {
     setPassword(e.target.value);
-  };
-  const handleName = (e) => {
-    setName(e.target.value);
   };
 
   return (
@@ -51,16 +47,6 @@ const CreatAccountForm = () => {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={12}>
-          <TextField
-            id="name_accounte"
-            label="Nom"
-            required
-            fullWidth
-            value={name}
-            onChange={handleName}
-            variant="outlined"
-          />
         </Grid>
         <Grid item xs={12}>
           <TextField
