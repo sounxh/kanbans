@@ -20,6 +20,7 @@ const CreatAccountForm = () => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassWord, setConfirmedPassWord] = useState("");
+  const [name, setName] = useState("");
   // TODO verifier le format
   const handleMail = (e) => {
     setMail(e.target.value);
@@ -29,6 +30,9 @@ const CreatAccountForm = () => {
   };
   const handleConfirmedPassword = (e) => {
     setConfirmedPassWord(e.target.value);
+  };
+  const handleName = (e) => {
+    setName(e.target.value);
   };
   return (
     <Container maxWidth="sm">
@@ -42,6 +46,17 @@ const CreatAccountForm = () => {
             fullWidth
             value={mail}
             onChange={handleMail}
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            id="name_accounte"
+            label="Nom"
+            required
+            fullWidth
+            value={name}
+            onChange={handleName}
             variant="outlined"
           />
         </Grid>
