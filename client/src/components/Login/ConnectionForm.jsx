@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 const CreatAccountForm = () => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmedPassWord, setConfirmedPassWord] = useState("");
 
   const classes = useStyles();
 
@@ -32,9 +31,7 @@ const CreatAccountForm = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
-  const handleConfirmedPassword = (e) => {
-    setConfirmedPassWord(e.target.value);
-  };
+
   return (
     <Container maxWidth="sm">
       <Grid container spacing={2}>
@@ -63,25 +60,12 @@ const CreatAccountForm = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            id="confirm_password_accounte"
-            label="Confirmer mot de passe"
-            type="password"
-            required
-            fullWidth
-            value={confirmedPassWord}
-            onChange={handleConfirmedPassword}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12}>
           <Button
             onClick={(e) =>
               console.log(
                 "connection submit with information",
                 mail,
                 password,
-                confirmedPassWord
               )
             }
             size="medium"

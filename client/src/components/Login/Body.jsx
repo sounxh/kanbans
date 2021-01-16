@@ -5,12 +5,6 @@ import CreatAccountForm from "./CreateAccountForm";
 
 const useStyles = makeStyles((theme) => ({
   appContainer: {
-    display: "flex",
-    flexDirection: "row",
-    overflowX: "auto",
-    whiteSpace: "no-wrap",
-    overflowY: "hidden",
-    position: "absolute",
     marginTop: "100px",
     padding: "10px",
   },
@@ -24,9 +18,9 @@ const Body = ({ isConnection } = true) => {
   const classes = useStyles();
 
   return (
-    <Container className={classes.appContainer} maxWidth="sm">
+    <div className={classes.appContainer} >
       {isConnection ? <ConnectionForm /> : <CreatAccountForm />}
-    </Container>
+    </div>
   );
 };
 
