@@ -41,7 +41,8 @@ const AddCardForm = (props) => {
     console.log(newCard);
     Axios.post("/api/insert", {
       cardName: newCard,
-    }).then(() => {
+    })
+    .then(() => {
       alert("successfully insert");
     });
   };

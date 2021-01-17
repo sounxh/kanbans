@@ -7,11 +7,11 @@ import Column from "./Column";
 import AddColumnForm from "./AddColumnForm";
 
 const itemsFromBackend = [
-  { id: uuid(), content: "First task" },
-  { id: uuid(), content: "Second task" },
-  { id: uuid(), content: "Third task" },
-  { id: uuid(), content: "Fourth task" },
-  { id: uuid(), content: "Fifth task" },
+  { id: uuid(), content: "First task", index: 1 },
+  { id: uuid(), content: "Second task", index: 2 },
+  { id: uuid(), content: "Third task", index: 3 },
+  { id: uuid(), content: "Fourth task", index: 4 },
+  { id: uuid(), content: "Fifth task", index: 5 },
 ];
 
 const columnsFromBackend = {
@@ -73,6 +73,8 @@ const onDragEnd = (result, columns, setColumns) => {
     }
   }
   if (type === "Column") {
+    if (!result.destination) return;
+
   }
 };
 

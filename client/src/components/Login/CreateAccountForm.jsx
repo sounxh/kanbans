@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 // TODO verifier que toute les information son rentré
 // TODO verifier que les deux mots de passe son les même
-const CreateAccountForm = () => {
+const CreateAccountForm = ({ handleOnClick }) => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
@@ -79,6 +79,7 @@ const CreateAccountForm = () => {
             type="password"
             required
             fullWidth
+            error={password !== confirmedPassword} 
             value={confirmedPassword}
             onChange={handleConfirmedPassword}
             variant="outlined"
@@ -86,14 +87,9 @@ const CreateAccountForm = () => {
         </Grid>
         <Grid item xs={12}>
           <Button
-            onClick={(e) =>
-              console.log(
-                "creation submit with information",
-                mail,
-                password,
-                confirmedPassword
-              )
-            }
+            onClick={() => {
+              handleOnClick(mail, password, confirmedPassword, name);
+            }}
             size="medium"
             variant="contained"
             color="primary"

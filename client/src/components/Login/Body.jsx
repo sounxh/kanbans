@@ -10,12 +10,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Body = ({ isConnection, handleOnClick  } ) => {
+const Body = ({ isConnection, handleOnClickConnection, handleOnClickCreation } ) => {
   const classes = useStyles();
 
   return (
     <div className={classes.appContainer} >
-      {isConnection ? <ConnectionForm handleOnClick={handleOnClick}/> : <CreatAccountForm />}
+      {isConnection ? <ConnectionForm handleOnClick={handleOnClickConnection}/> : <CreatAccountForm handleOnClick={handleOnClickCreation}/>}
     </div>
   );
 };

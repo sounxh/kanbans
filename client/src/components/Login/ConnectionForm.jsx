@@ -58,7 +58,7 @@ const LoginForm = ({ handleOnClick }) => {
         </Grid>
         <Grid item xs={12}>
           <Button
-            onClick={handleOnClick}
+            onClick={() => handleOnClick(mail, password)}
             size="medium"
             variant="contained"
             color="primary"
