@@ -1,4 +1,8 @@
-GET http://localhost:3001/api/insert/
+POST http://localhost:3001/api/card/addcard
 Content-Type: application/json
 
-
+{
+  "columnID": "1",
+  "cardName": "manger",
+  "index": "2"
+}
