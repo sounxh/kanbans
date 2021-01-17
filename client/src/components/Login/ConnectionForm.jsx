@@ -18,12 +18,9 @@ const useStyles = makeStyles((theme) => ({
 
 // TODO verifier que toute les information son rentré
 // TODO verifier que les deux mots de passe son les même
-const LoginForm = () => {
+const LoginForm = ({ handleOnClick }) => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-
-  const classes = useStyles();
-
   // TODO verifier le format
   const handleMail = (e) => {
     setMail(e.target.value);
@@ -61,13 +58,7 @@ const LoginForm = () => {
         </Grid>
         <Grid item xs={12}>
           <Button
-            onClick={(e) =>
-              console.log(
-                "connection submit with information",
-                mail,
-                password,
-              )
-            }
+            onClick={handleOnClick}
             size="medium"
             variant="contained"
             color="primary"
