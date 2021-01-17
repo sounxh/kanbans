@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 // TODO verifier que toute les information son rentré
 // TODO verifier que les deux mots de passe son les même
-const CreatAccountForm = ({ handleOnClick }) => {
+const LoginForm = () => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   // TODO verifier le format
@@ -71,4 +71,4 @@ const CreatAccountForm = ({ handleOnClick }) => {
   );
 };
 
-export default CreatAccountForm;
+export default LoginForm;

@@ -39,7 +39,7 @@ const AddCardForm = (props) => {
 
   const submitCard = () => {
     console.log(newCard);
-    Axios.post("http://localhost:3001/api/insert", {
+    Axios.post("/api/insert", {
       cardName: newCard,
     }).then(() => {
       alert("successfully insert");
