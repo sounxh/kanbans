@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 // TODO verifier que toute les information son rentré
 // TODO verifier que les deux mots de passe son les même
-const LoginForm = () => {
+const LoginForm = ({ handleOnClick }) => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   // TODO verifier le format
