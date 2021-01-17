@@ -3,6 +3,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { AuthContext } from "../App";
+import { useContext } from "react";
+import Cookies from "js-cookie";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +25,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
-
+  const auth = useContext(AuthContext);
+  const handleLogout = () => {
+    auth.setAuth(false);
+    // TODO replace by userID
+    Cookies.remove("user");
+  };
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -30,7 +38,7 @@ const Header = () => {
           <Typography variant="h6" className={classes.title}>
             Trello
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={handleLogout}>Déconnection</Button>
         </Toolbar>
       </AppBar>
     </div>
